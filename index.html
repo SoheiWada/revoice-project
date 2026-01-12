@@ -36,6 +36,7 @@
             max-width: 210mm;
             margin: 0 auto;
             background: #fff;
+            width: 100%;
         }
 
         /* Hero Section */
@@ -104,6 +105,14 @@
             margin-bottom: 20px;
             letter-spacing: 0.05em;
             color: #1a1a1a;
+            word-break: keep-all;
+            line-height: 1.4;
+            text-wrap: balance;
+        }
+
+        .hero-line {
+            display: block;
+            white-space: nowrap;
         }
 
         .hero-subtitle {
@@ -168,6 +177,7 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-top: 4px solid #e60012;
+            min-width: 0;
         }
 
         .step-card:hover {
@@ -354,6 +364,7 @@
             display: flex;
             margin-bottom: 40px;
             position: relative;
+            gap: 20px;
         }
 
         .timeline-month {
@@ -367,6 +378,7 @@
             text-align: center;
             box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
             position: relative;
+            white-space: nowrap;
         }
 
         .timeline-content {
@@ -494,10 +506,115 @@
 
             .timeline-item {
                 flex-direction: column;
+                gap: 15px;
             }
 
             .timeline-month {
-                margin-bottom: 10px;
+                margin-bottom: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                background-attachment: scroll;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+
+            .hero {
+                padding: 50px 16px 60px;
+            }
+
+            .hero h1 {
+                font-size: 2.1em;
+                letter-spacing: 0.02em;
+            }
+
+            .hero-description {
+                font-size: 1em;
+            }
+
+            .partnership-logos {
+                gap: 20px;
+                flex-direction: column;
+            }
+
+            .partnership-logo.sli-logo {
+                height: 48px;
+            }
+
+            .partnership-logo.ai-story-logo {
+                height: 72px;
+            }
+
+            .partnership-separator {
+                display: none;
+            }
+
+            section {
+                padding: 36px 16px;
+            }
+
+            .message-content {
+                font-size: 1em;
+            }
+
+            .step-card {
+                padding: 26px;
+            }
+
+            .step-number {
+                width: 52px;
+                height: 52px;
+                line-height: 52px;
+                font-size: 1.6em;
+            }
+
+            .team-photo {
+                width: 96px;
+                height: 96px;
+            }
+
+            .team-photo.sezaki-photo {
+                width: 140px;
+                height: 140px;
+                background-size: 150%;
+            }
+
+            .team-content {
+                padding: 26px;
+            }
+
+            .team-name {
+                font-size: 1.5em;
+            }
+
+            .timeline-month {
+                font-size: 1.2em;
+                min-width: auto;
+                width: fit-content;
+            }
+
+            .timeline-content {
+                padding: 20px;
+            }
+
+            .netask-feature {
+                padding: 20px;
+            }
+
+            .cta {
+                padding: 50px 20px;
+            }
+
+            .cta h3 {
+                font-size: 1.6em;
+            }
+
+            .cta p {
+                font-size: 1.05em;
             }
         }
 
@@ -583,7 +700,10 @@
                         <img src="ai-story-logo.png" alt="Ai story">
                     </div>
                 </div>
-                <h1>話せるから、整う。<br>整うから、進める。</h1>
+                <h1>
+                    <span class="hero-line">話せるから、整う。</span>
+                    <span class="hero-line">整うから、進める。</span>
+                </h1>
                 <p class="hero-subtitle">Re:Voice project</p>
                 <p class="hero-description">
                     適性診断と1on1で、評価ではなく「自分らしい力の出し方」を見つける4ヵ月。
